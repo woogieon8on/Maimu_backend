@@ -4,14 +4,14 @@ spring:
       client:
         registration:
           google:
-            client-id: 4374057407-fcrel4fg7d277s9898nptt0h3svksvh9.apps.googleusercontent.com
-            client-secret: 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
+            client-id: [client-id]
+            client-secret: [client-secret]
             scope:
               - profile
               - email
           naver:
-            client-id: MNDk0tDL3Lydd30J5mcD
-            client-secret: 4pzs3OoAv_
+            client-id: [client-id]
+            client-secret: [client-secret]
             client-name: Naver
             redirect-uri: "http://localhost:8080/login/oauth2/code/naver"
             authorization-grant-type: authorization_code
