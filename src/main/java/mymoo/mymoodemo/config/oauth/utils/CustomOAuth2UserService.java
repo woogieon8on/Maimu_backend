@@ -1,6 +1,7 @@
 package mymoo.mymoodemo.config.oauth.utils;
 
-import mymoo.mymoodemo.OAuthAttributes;
+import mymoo.mymoodemo.config.oauth.dto.OAuthAttributes;
+import mymoo.mymoodemo.config.oauth.dto.SessionUser;
 import mymoo.mymoodemo.domain.Users;
 import mymoo.mymoodemo.repository.UserRepository;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
