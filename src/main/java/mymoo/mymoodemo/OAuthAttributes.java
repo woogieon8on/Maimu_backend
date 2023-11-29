@@ -3,6 +3,7 @@ package mymoo.mymoodemo;
 import lombok.Builder;
 import lombok.Getter;
 import mymoo.mymoodemo.domain.Users;
+import mymoo.mymoodemo.domain.enums.Role;
 
 import java.util.Map;
 
@@ -15,7 +16,20 @@ public class OAuthAttributes {
     private String email;
 
     public static OAuthAttributes of(String registraionId, String userNameAttributeName, Map<String, Object> attributes){
+        if("naver".equals(registraionId)) {
+            return ofNaver("id", attributes);
+        }
+    }
 
+    private static OAuthAttributes ofNaver(String userNameAttributeName, Map<String, Object> attributes){
+        Map<String, Object> response = (Map<String, Object>) attributes.get("response");
+
+        return OAuthAttributes.builder()
+                .name((String) response.get("name"))
+                .email((String) response.get("email"))
+                .attributes(response)
+                .nameAttributeKey(userNameAttributeName)
+                .build();
     }
 
 

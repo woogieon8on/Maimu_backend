@@ -1,5 +1,6 @@
-package mymoo.mymoodemo.service;
+package mymoo.mymoodemo.config.oauth.utils;
 
+import mymoo.mymoodemo.OAuthAttributes;
 import mymoo.mymoodemo.domain.Users;
 import mymoo.mymoodemo.repository.UserRepository;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -35,7 +36,7 @@ public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequ
 
         OAuthAttributes attributes = OAuthAttributes.of(registrationId, userNameAttributeName, oAuth2User.getAttributes());
 
-        Users users = saveOrUpdate(attributes);
+        Users user = saveOrUpdate(attributes);
         httpSession.setAttribute("user", new SessionUser(user));
 
         return new DefaultOAuth2User(

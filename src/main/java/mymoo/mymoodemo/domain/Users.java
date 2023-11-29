@@ -3,6 +3,7 @@ package mymoo.mymoodemo.domain;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import mymoo.mymoodemo.domain.enums.Role;
 
 import javax.persistence.*;
 
