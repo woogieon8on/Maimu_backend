@@ -30,6 +30,7 @@ public class OAuthAttributes {
                 .nameAttributeKey(userNameAttributeName)
                 .build();
     }
+
     private static OAuthAttributes ofNaver(String userNameAttributeName, Map<String, Object> attributes){
         Map<String, Object> response = (Map<String, Object>) attributes.get("response");
 
@@ -37,6 +38,18 @@ public class OAuthAttributes {
                 .name((String) response.get("name"))
                 .email((String) response.get("email"))
                 .attributes(response)
+                .nameAttributeKey(userNameAttributeName)
+                .build();
+    }
+
+    private static OAuthAttributes ofKakao(String userNameAttributeName, Map<String, Object> attributes) {
+        Map<String, Object> responese = (Map<String, Object>) attributes.get("kakao_account");
+        Map<String ,Object> account = (Map<String, Object>) attributes.get("profile");
+
+        return OAuthAttributes.builder()
+                .name((String) account.get("nickname"))
+                .email((String) responese.get("email"))
+                .attributes(responese)
                 .nameAttributeKey(userNameAttributeName)
                 .build();
     }
