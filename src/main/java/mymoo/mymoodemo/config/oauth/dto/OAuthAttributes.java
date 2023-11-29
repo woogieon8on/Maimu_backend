@@ -18,6 +18,8 @@ public class OAuthAttributes {
     public static OAuthAttributes of(String registraionId, String userNameAttributeName, Map<String, Object> attributes){
         if("naver".equals(registraionId)) {
             return ofNaver("id", attributes);
+        } else if ("kakao".equals(registraionId)) {
+            return ofKakao("id", attributes);
         }
         return ofGoogle(userNameAttributeName, attributes);
     }
