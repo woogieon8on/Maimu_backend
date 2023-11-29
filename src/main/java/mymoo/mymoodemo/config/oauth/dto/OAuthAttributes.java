@@ -1,4 +1,4 @@
-package mymoo.mymoodemo;
+package mymoo.mymoodemo.config.oauth.dto;
 
 import lombok.Builder;
 import lombok.Getter;
@@ -19,6 +19,7 @@ public class OAuthAttributes {
         if("naver".equals(registraionId)) {
             return ofNaver("id", attributes);
         }
+        return null;
     }
 
     private static OAuthAttributes ofNaver(String userNameAttributeName, Map<String, Object> attributes){
