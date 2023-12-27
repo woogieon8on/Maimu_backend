@@ -1,10 +1,12 @@
-datasoure:
-  url: jdbc:h2:mem:testdb
-  driver-class-name: org.h2.Driver
-  username: sa
-  password:
-
 spring:
+  h2:
+    console:
+      enabled: true
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:testdb
+    username: sa
+
   security:
     oauth2:
       client:
@@ -46,7 +48,3 @@ spring:
             tokenUri: https://kauth.kakao.com/oauth/token
             userInfoUri: https://kapi.kakao.com/v2/user/me
             userNameAttribute: id
-  h2:
-    console:
-      enabled: true
-      path: /h2-console
