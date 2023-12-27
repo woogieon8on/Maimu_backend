@@ -1,17 +1,23 @@
+datasoure:
+  url: jdbc:h2:mem:testdb
+  driver-class-name: org.h2.Driver
+  username: sa
+  password:
+
 spring:
   security:
     oauth2:
       client:
         registration:
           google:
-            client-id: [client-id]
-            client-secret: [client-secret]
+            client-id: 4374057407-fcrel4fg7d277s9898nptt0h3svksvh9.apps.googleusercontent.com
+            client-secret: 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
             scope:
               - profile
               - email
           naver:
-            client-id: [client-id]
-            client-secret: [client-secret]
+            client-id: MNDk0tDL3Lydd30J5mcD
+            client-secret: 4pzs3OoAv
             client-name: Naver
             redirect-uri: "http://localhost:8080/login/oauth2/code/naver"
             authorization-grant-type: authorization_code
@@ -19,11 +25,11 @@ spring:
               - name
               - email
           kakao:
-            client-id: [client-id]
-            client-secret: [client-secret]
+            client-id: ae177dc2ef0493789abb644182c44320
+            client-secret: Q79eG7zybmVq2f663GwUTJu5kjeEvCIL
             client-name: Kakao
             client-authentication-method: POST
-            redirect-uri: [redirect-url]
+            redirect-uri: "http://localhost:8080/login/oauth2/code/kakao"
             authorization-grant-type: authorization_code
             scope:
               - profile_nickname
@@ -40,3 +46,7 @@ spring:
             tokenUri: https://kauth.kakao.com/oauth/token
             userInfoUri: https://kapi.kakao.com/v2/user/me
             userNameAttribute: id
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
